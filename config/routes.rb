@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   match 'about', :to => 'pages#about', :via => :get
 
   resources :users
+  
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
